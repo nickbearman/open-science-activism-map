@@ -1,6 +1,6 @@
 # Open Science Activism Map
 
-A semi-automated map of people's locations, forked from https://micheletobias.github.io/traveling-gis-chat-book/, using R and MapBox. 
+A semi-automated map of people's locations, forked from https://micheletobias.github.io/traveling-gis-chat-book/, using R and Leaflet. 
 
 To update the map, edit this file [https://github.com/nickbearman/open-science-activism-map/edit/main/data/locations.csv](https://github.com/nickbearman/open-science-activism-map/edit/main/data/locations.csv) and submit a PR. The code needs to be pulled. Then some R has to run to create the map (Nick can do this, but it should be able to be automated). Then the map should update. 
 
