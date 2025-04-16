@@ -1,3 +1,8 @@
+# Open Science Activism Map
+
+A semi-automated map of people's locations, forked from https://micheletobias.github.io/traveling-gis-chat-book/, using R and MapBox. 
+
+
 # The Fellowship of the Traveling #GISChat Book
 A web map of where the Traveling GIS Chat Book has been: https://micheletobias.github.io/traveling-gis-chat-book/
 
