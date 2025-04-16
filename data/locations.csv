@@ -1,13 +1,13 @@
-"city","state","country","lat","long"
-"Denver"," CO"," USA",39.7392364,-104.984862
-"Grand Rapids","MI","USA",42.9632405,-85.6678639
-"Lansing","MI","USA",42.7337712,-84.5553805
-"Macomb","IL","USA",40.465,-90.685
-"McKinney","TX","USA",33.2415,-96.6361
-"Dickinson","TX","USA",29.4491,-95.077
-"Davis","CA","USA",38.545379,-121.744583
-"Salmon Arm","BC","Canada",50.7036434933504,-119.273408512983
-"Anchorage","AK","USA",61.2222597314819,-149.899140736119
-"Denver"," CO"," USA",39.7392364,-104.984862
-"Maple Lake"," MN"," USA",45.2293950728366,-93.998179998155
-"Norwich","Norfolk","Mexico",25.53444717917365, -103.12684199473748
+"city","state","country","lat","long","name","job","contact","open"
+"Denver"," CO"," USA",39.7392364,-104.984862,"Heidi","Open Science Community Manager","nick@nickbearman.com","Open to this"
+"Grand Rapids","MI","USA",42.9632405,-85.6678639,"Nick Bearman","GIS Trainer and Consultant","@lydia_ridel","Open to that"
+"Lansing","MI","USA",42.7337712,-84.5553805,"Lydia Riedl","Open Science Community Manager","nick@nickbearman.com","Open to this"
+"Macomb","IL","USA",40.465,-90.685,"Nick Bearman","GIS Trainer and Consultant","@lydia_ridel","Open to that"
+"McKinney","TX","USA",33.2415,-96.6361,"Nick Bearman","Open Source Advocate","nick@nickbearman.com","Open to this"
+"Dickinson","TX","USA",29.4491,-95.077,"Lydia Riedl","Wonder Woman","@lydia_ridel","Open to that"
+"Davis","CA","USA",38.545379,-121.744583,"Lydia Riedl","Open Science Community Manager","nick@nickbearman.com","Open to this"
+"Salmon Arm","BC","Canada",50.70364349,-119.2734085,"Nick Bearman","GIS Trainer and Consultant","@lydia_ridel","Open to that"
+"Anchorage","AK","USA",61.22225973,-149.8991407,"Anna Smith","Open Science Community Manager","nick@nickbearman.com","Open to this"
+"Denver"," CO"," USA",39.7392364,-104.984862,"Lydia Riedl","GIS Trainer and Consultant","@lydia_ridel","Open to that"
+"Maple Lake"," MN"," USA",45.22939507,-93.99818,"Nick Bearman","Cool Spy","nick@nickbearman.com","Open to this"
+"Norwich","Norfolk","Mexico",25.53444718,-103.126842,"Anna Smith","Wonder Woman","@lydia_ridel","Open to that"

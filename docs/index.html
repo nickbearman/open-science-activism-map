@@ -22,17 +22,16 @@
 
 <div class="rounded_box">
 
-<h1>The Fellowship of the Traveling #GISChat Book</h1>
+<h1>Open Science Activists</h1>
 
-<p class="intro">Inspired by the book/movie <a href="https://www.imdb.com/title/tt0403508/?ref_=ext_shr_lnk">"The Sisterhood of the Traveling Pants"</a>, where four girls across the world stay connected with one another by passing around a pair of jeans, the Fellowship of the Traveling #GISChat Book aims to pass around one book to the international #GISChat community, a group of geospatial and mapping professionals that connect on various social media platforms.</p>
+<p class="intro">Some text about Open Science Activism</p>
 
-<p><b>The Book:</b> <a href="http://pengshepherd.com/the-cartographers/"><i>The Cartographers</i></a> by Peng Shepherd.</p>
+<p><b>Some more text:</b> <a href="http://pengshepherd.com/the-cartographers/"><i>with</i></a> links.</p>
 
-<p><b>The Founders:</b> <a href="https://twitter.com/gregcocks_kiwi">Greg Cocks</a> is the champion that bought and shared the book. <a href="https://twitter.com/pokateo_">Kate Berg</a> was inspired by a <a href=https://twitter.com/gregcocks_kiwi/status/1611115550993780738?s=20&t=1DrdkXrJ6XGYPxNEFlWxtw">Twitter thread</a> to formally set up the Fellowship.</p>
 
-<p>Want to join in? Apply to participate by filling out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_rLbQl5TXbscGTX_6hvDIaciEi0-8X0vndsdWLGZytATRNg/viewform">application form</a>.</p>
+<p>Want to join in? Apply to participate by filling out the <i>Google Form link</i></p>
 
-<p>This web map shows the journey of the Traveling GIS Chat Book.</p>
+<p>This web map shows where activists are.</p>
 
 </div>
 
@@ -92,7 +91,7 @@
 		}).addTo(bookmap);
 */
 	
-	var arrow_line = L.polyline(book_coords, {
+/*	var arrow_line = L.polyline(book_coords, {
 		"color": "orange",
 		"weight": 4,
 		"opacity": .5
@@ -112,17 +111,44 @@
 		]
     }).addTo(bookmap);
 
-	
+*/
+
 	//add book location points from the GeoJSON (locations.js) file
 
 
+//    var bookpoints = L.geoJSON(locations, {  
+//        pointToLayer: function(feature, latlng){  
+//            return L.circleMarker(latlng, {
+//				color: 'orange', 
+//				radius: 4});
+//        }
+//    }).addTo(bookmap);
+    
     var bookpoints = L.geoJSON(locations, {  
         pointToLayer: function(feature, latlng){  
             return L.circleMarker(latlng, {
-				color: 'orange', 
-				radius: 4});
+				color: 'orange',
+				opacity: 1.0,
+				radius: 5,});
+        },
+        onEachFeature: function(feature, layer){
+            layer.bindPopup("<b>Name: </b>" +  feature.properties.name + "<br>" +
+            "<b>Job Title: </b>" + feature.properties.job);
         }
     }).addTo(bookmap);
+    
+    /* info https://ucdavisdatalab.github.io/workshop_web_maps/add-a-popup.html */
+    
+  //add points
+/*
+      //add a marker for the Quad with a tooltip
+            //Quad coordinates: 38.541162, -121.749371
+    var marker = new L.marker([38.541112, -121.749350], {
+        opacity: 1.0   //teardrop marker opacity may be set to zero
+        });             
+        marker.bindTooltip("<b>Quad</b>", { });
+        marker.addTo(bookmap);
+  */  
 
 </script>
 

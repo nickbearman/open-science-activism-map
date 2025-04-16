@@ -13,7 +13,7 @@ library(geojsonsf)
 
 
 # read the data
-locations<-read.csv("./data/locations.csv")
+locations<-read.csv("../data/locations.csv")
 
 #add id column
 #locations$id<-c(1:dim(locations)[[1]])
@@ -45,7 +45,7 @@ if (dim(to_geocode)[1]>0){
 
 
 # write the data back to the csv so don't need to geocode every line every time it updates
-write.csv(to_plot, file="./data/locations.csv", row.names = FALSE)
+write.csv(to_plot, file="../data/locations.csv", row.names = FALSE)
 
 
 # Create GeoJSON & Javascript ---------------------------------------------
@@ -63,7 +63,7 @@ js_map_points<-paste0(
 )
 
 # write the text to the javascript file
-file_connection<-file("./docs/locations.js")
+file_connection<-file("../docs/locations.js")
 writeLines(text=js_map_points, con=file_connection)
 close(file_connection)
 
@@ -86,7 +86,7 @@ coords_to_write<-paste0(
 )
 
 # write the text to the javascript file
-file_connection<-file("./docs/book_coords.js")
+file_connection<-file("../docs/book_coords.js")
 writeLines(text=coords_to_write, con=file_connection)
 close(file_connection) 
 
@@ -107,7 +107,7 @@ js_map_line<-paste0(
 )
 
 # write the text to the javascript file
-file_connection<-file("./docs/book_line.js")
+file_connection<-file("../docs/book_line.js")
 writeLines(text=js_map_line, con=file_connection)
 close(file_connection)
 
