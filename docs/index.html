@@ -133,7 +133,9 @@
         },
         onEachFeature: function(feature, layer){
             layer.bindPopup("<b>Name: </b>" +  feature.properties.name + "<br>" +
-            "<b>Job Title: </b>" + feature.properties.job);
+            "<b>Job Title: </b>" + feature.properties.job + "<br>" +
+            "<b>Contact: </b> <a href=" + feature.properties.contactlink + " target=\"blank\">" + feature.properties.contact + "</a>" + "<br>" +
+            "<b>Open to: </b>" + feature.properties.open);
         }
     }).addTo(bookmap);
     
