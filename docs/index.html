@@ -180,21 +180,45 @@
 //        }
 //    }).addTo(bookmap);
     
-    var bookpoints = L.geoJSON(locations, {  
-        pointToLayer: function(feature, latlng){  
-            return L.circleMarker(latlng, {
-				color: 'orange',
-				opacity: 1.0,
-				radius: 5,});
-        },
-        onEachFeature: function(feature, layer){
-            layer.bindPopup("<b>Name: </b>" +  feature.properties.name + "<br>" +
-            "<b>Job Title: </b>" + feature.properties.job + "<br>" +
-            "<b>Contact: </b> <a href=" + feature.properties.contactlink + " target=\"blank\">" + feature.properties.contact + "</a>" + "<br>" +
-            "<b>Open to: </b>" + feature.properties.open);
-        }
-    }).addTo(bookmap);
-    
+// Group features by location
+let locationMap = {};
+
+locations.features.forEach(feature => {
+    let latlng = feature.geometry.coordinates.join(',');
+    if (!locationMap[latlng]) {
+        locationMap[latlng] = [];
+    }
+    locationMap[latlng].push(feature);
+});
+
+// Add grouped markers with variable circle size
+for (let coord in locationMap) {
+    let featuresAtLocation = locationMap[coord];
+    let [lng, lat] = coord.split(',').map(Number); // GeoJSON uses [lng, lat]
+
+    // Compose popup content
+    let popupContent = featuresAtLocation.map(feature => {
+        return "<b>Name: </b>" + feature.properties.name + "<br>" +
+               "<b>Job Title: </b>" + feature.properties.job + "<br>" +
+               "<b>Contact: </b> <a href=" + feature.properties.contactlink + " target=\"blank\">" + feature.properties.contact + "</a><br>" +
+               "<b>Open to: </b>" + feature.properties.open;
+    }).join("<hr>");
+
+    // Determine radius
+    let count = featuresAtLocation.length;
+    let baseRadius = 5;
+    let maxRadius = 15;
+    let radius = Math.min(baseRadius + count, maxRadius);
+
+    // Add marker
+    L.circleMarker([lat, lng], {
+        color: 'orange',
+        opacity: 1.0,
+        radius: radius
+    }).addTo(bookmap)
+      .bindPopup(popupContent);
+}
+
     /* info https://ucdavisdatalab.github.io/workshop_web_maps/add-a-popup.html */
     
   //add points
